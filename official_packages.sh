@@ -8,7 +8,7 @@ fi
 
 # Function to install a package
 install_package() {
-    echo "Installing $1..."
+    echo -e "\n\e[1;35mInstalling $1...\e[0m\n"
     pacman -S --noconfirm --needed $1
 }
 

@@ -11,7 +11,7 @@ rm -rf yay
 
 # Function to install packages from external sources
 install_aur_package() {
-    echo "Installing $1..."
+    echo -e "\n\e[1;35mInstalling $1...\e[0m\n"
     yay -S --noconfirm --needed $1
 }
 
