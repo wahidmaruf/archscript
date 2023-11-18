@@ -11,3 +11,9 @@
    > chmod +x aur_packages.sh
 2. Run
     > ./aur_packages.sh
+
+#### Install Dev package
+1. Change permission
+   > chmod +x dev_packages.sh
+2. Run
+    > ./dev_packages.sh
