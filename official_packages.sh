@@ -38,9 +38,9 @@ pacman -Syu
 # Specify the line to uncomment
 line_color="Color"
 # Uncomment the specified line in /etc/pacman.conf
+sed -i '/^#Color/a ILoveCandy' /etc/pacman.conf
 sed -i "s/^#${line_color}/${line_color}/" /etc/pacman.conf # See color text in terminal
 
-echo 'ILoveCandy' | sudo tee -a /etc/pacman.conf
 pacman -Syy # -Syy means forceful refresh of pacman database sync
 
 install_package pacman-contrib
