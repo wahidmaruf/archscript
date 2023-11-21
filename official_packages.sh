@@ -54,7 +54,10 @@ install_package ninja
 install_package cmake
 install_package clang
 
+# Others
 install_package	bitwarden # Bitwarden Password Manager
+install_package neofetch
+install_package vi
 
 # # Install Calibre
 echo -e "\n${PURPLE}Installing Calibre${NC}\n"
