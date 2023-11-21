@@ -77,7 +77,6 @@ install_aur_package tor-browser-bin
 
 install_flatpak_package com.github.Murmele.Gittyup # Git Client
 install_flatpak_package com.github.johnfactotum.Foliate # EBook Reader
-install_flatpak_package com.calibre_ebook.calibre # EBook Reader
 
 # Display results
 echo -e "\n${GREEN}Packages successfully installed:${NC}"

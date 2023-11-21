@@ -3,6 +3,7 @@
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 RED='\033[0;31m'
+BROWN='\033[0;33m'
 
 # Arrays to store success and failure messages
 success_packages=()
@@ -45,7 +46,7 @@ install_aur_package android-sdk-cmdline-tools-latest
 install_aur_package android-platform
 
 install_aur_package pycharm-community-jre
-install_aur_package vscodium
+install_aur_package vscodium-bin
 install_aur_package dbeaver-git
 
 
@@ -64,12 +65,8 @@ echo 'export JAVA_HOME=/usr/lib/jvm/java-21-openjdk' >> ~/.bashrc
 
 source ~/.bashrc
 
-cd /opt/android-sdk/cmdline-tools/latest/bin
-yes | ./sdkmanager --licenses
-
 flutter precache
 flutter --disable-analytics
-yes | flutter doctor --android-licenses
 flutter doctor
 
 # Install Firebase CLI
@@ -90,4 +87,18 @@ else
     done
 fi
 
+echo -e "\n${GREEN}Installing Extensions!${NC}"
+vscodium --install-extension Dart-Code.flutter
+vscodium --install-extension FelixAngelov.bloc
+vscodium --install-extension ricardo-emerson.dart-data-class-tools
+vscodium --install-extension Nash.awesome-flutter-snippets
+vscodium --install-extension jeroen-meijer.pubspec-assist
+vscodium --install-extension luanpotter.dart-import
 
+echo -e "\n${BROWN}Nedd Permission to accept Android SDK Licenses${NC}"
+sudo chmod 777 /opt/android-sdk
+
+yes | flutter doctor --android-licenses
+flutter doctor
+
+echo -e "\n${GREEN}All Done!${NC}" 

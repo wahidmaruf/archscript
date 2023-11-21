@@ -19,7 +19,7 @@ failure_packages=()
 # Function to install a package
 install_package() {
     echo -e "\n${PURPLE}Installing $1...${NC}\n"
-    pacman -S --noconfirm --needed $1
+    pacman -S --noconfirm --needed $1 --quiet
 
     # Check the exit status of the last command
     if [ $? -eq 0 ]; then
@@ -57,13 +57,17 @@ install_package clang
 install_package	bitwarden # Bitwarden Password Manager
 
 # # Install Calibre
-# wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+echo -e "\n${PURPLE}Installing Calibre${NC}\n"
+wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
 # Activate Multilib repository
+echo -e "\n${PURPLE}Activating multilib Repo${NC}\n"
 awk '$0=="#[multilib]"{c=2} c&&c--{sub(/#/,"")} 1' /etc/pacman.conf > /tmp/pacman.conf.tmp && mv /tmp/pacman.conf.tmp /etc/pacman.conf
 
 pacman -Sy # Update the repository database
 install_package steam
+
+install_package foliate # Document Viewer
 
 install_package flatpak
 
