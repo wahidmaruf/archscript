@@ -90,7 +90,6 @@ fi
 echo -e "\n${GREEN}Installing Extensions!${NC}"
 vscodium --install-extension Dart-Code.flutter
 vscodium --install-extension FelixAngelov.bloc
-vscodium --install-extension ricardo-emerson.dart-data-class-tools
 vscodium --install-extension Nash.awesome-flutter-snippets
 vscodium --install-extension jeroen-meijer.pubspec-assist
 vscodium --install-extension luanpotter.dart-import

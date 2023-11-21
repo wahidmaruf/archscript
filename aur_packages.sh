@@ -24,6 +24,13 @@ else
     echo -e "\n${GREEN}paru is already installed.${NC}\n"
 fi
 
+# Check if flatpak is installed
+if ! command -v flatpak &> /dev/null; then
+    echo -e "\n${GREEN}flatpak is not installed. Some Package installation may fail.${NC}"
+else
+    echo -e "\n${GREEN}flatpak is installed.${NC}\n"
+fi
+
 # Function to install packages from external sources
 install_aur_package() {
     echo -e "\n${GREEN}Installing AUR package $1...${NC}\n"
@@ -71,9 +78,10 @@ install_aur_package timeshift-autosnap # Backup System
 # Install Browsers
 install_aur_package google-chrome 
 install_aur_package librewolf-bin 
-install_aur_package tor-browser-bin 
+install_aur_package tor-browser-bin
 
-# install_flatpak_package com.bitwarden.desktop # Bitwarden Password Manager
+# Keyboard
+install_aur_package keyman 
 
 install_flatpak_package com.github.Murmele.Gittyup # Git Client
 install_flatpak_package com.github.johnfactotum.Foliate # EBook Reader
