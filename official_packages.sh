@@ -19,7 +19,7 @@ failure_packages=()
 # Function to install a package
 install_package() {
     echo -e "\n${PURPLE}Installing $1...${NC}\n"
-    pacman -S --noconfirm --needed $1 --quiet
+    pacman -S --noconfirm --needed --quiet $1
 
     # Check the exit status of the last command
     if [ $? -eq 0 ]; then

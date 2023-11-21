@@ -26,7 +26,7 @@ fi
 # Function to install packages from external sources
 install_aur_package() {
     echo -e "\n${GREEN}Installing AUR package $1...${NC}\n"
-    paru -S --noconfirm --needed $1
+    paru -S --noconfirm --needed --quiet $1 
 
       # Check the exit status of the last command
     if [ $? -eq 0 ]; then
@@ -96,8 +96,5 @@ vscodium --install-extension luanpotter.dart-import
 
 echo -e "\n${BROWN}Nedd Permission to accept Android SDK Licenses${NC}"
 sudo chmod 777 /opt/android-sdk
-
-yes | flutter doctor --android-licenses
-flutter doctor
 
 echo -e "\n${GREEN}All Done!${NC}" 

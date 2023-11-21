@@ -2,11 +2,17 @@
 
 The provided scripts assist in installing packages on Arch Linux after the initial installation.
 
+### Single script to run all scripts
+1. Change permission
+   > chmod +x install.sh
+2. Run
+    > ./install.sh
+
 #### Install GRUB package
 1. Change permission
-   > chmod 777 dev_packages.sh
+   > chmod 777 grub.sh
 2. Run
-    > sudo ./dev_packages.sh
+    > sudo ./grub.sh
 
 #### Install Official package
 1. Change permission

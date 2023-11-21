@@ -17,7 +17,7 @@ if ! command -v paru &> /dev/null; then
     # Install paru
     git clone https://aur.archlinux.org/paru-bin.git
     cd paru || exit
-    makepkg -si --noconfirm
+    makepkg -si --noconfirm --quiet
     cd ..
     rm -rf paru
 else
@@ -34,7 +34,7 @@ fi
 # Function to install packages from external sources
 install_aur_package() {
     echo -e "\n${GREEN}Installing AUR package $1...${NC}\n"
-    paru -S --noconfirm --needed "$1"
+    paru -S --noconfirm --needed --quiet "$1" 
 
     # Check the exit status of the last command
     if [ $? -eq 0 ]; then
