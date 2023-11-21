@@ -15,7 +15,7 @@ if ! command -v paru &> /dev/null; then
     echo -e "\n${GREEN}paru is not installed. Installing paru...${NC}"
     
     # Install paru
-    git clone https://aur.archlinux.org/paru.git
+    git clone https://aur.archlinux.org/paru-bin.git
     cd paru || exit
     makepkg -si --noconfirm
     cd ..
