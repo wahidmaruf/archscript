@@ -16,6 +16,10 @@ fi
 success_packages=()
 failure_packages=()
 
+# Install paru
+source install_paru.sh
+install_paru
+
 # Function to install a package
 install_package() {
     echo -e "\n${PURPLE}Installing $1...${NC}\n"

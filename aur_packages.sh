@@ -10,19 +10,9 @@ PURPLE='\033[0;35m'
 success_packages=()
 failure_packages=()
 
-# Check if paru is installed
-if ! command -v paru &> /dev/null; then
-    echo -e "\n${GREEN}paru is not installed. Installing paru...${NC}"
-    
-    # Install paru
-    git clone https://aur.archlinux.org/paru-bin.git
-    cd paru || exit
-    makepkg -si --noconfirm --quiet
-    cd ..
-    rm -rf paru
-else
-    echo -e "\n${GREEN}paru is already installed.${NC}\n"
-fi
+# Install paru
+source install_paru.sh
+install_paru
 
 # Check if flatpak is installed
 if ! command -v flatpak &> /dev/null; then

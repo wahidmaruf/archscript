@@ -9,19 +9,9 @@ BROWN='\033[0;33m'
 success_packages=()
 failure_packages=()
 
-# Check if paru is installed
-if ! command -v paru &> /dev/null; then
-    echo "paru is not installed. Installing paru..."
-    
-    # Install paru
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf paru
-else
-    echo -e "${GREEN}paru is already installed.${NC}"
-fi
+# Install paru
+source install_paru.sh
+install_paru
 
 # Function to install packages from external sources
 install_aur_package() {
@@ -96,7 +86,4 @@ vscodium --install-extension Nash.awesome-flutter-snippets
 vscodium --install-extension jeroen-meijer.pubspec-assist
 vscodium --install-extension luanpotter.dart-import
 
-echo -e "\n${BROWN}Nedd Permission to accept Android SDK Licenses${NC}"
-sudo chmod 777 /opt/android-sdk
-
-echo -e "\n${GREEN}All Done!${NC}" 
+echo -e "\n${GREEN}Dev Packages Instllation Done!${NC}" 
