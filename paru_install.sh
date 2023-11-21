@@ -1,4 +1,4 @@
-# install_paru.sh
+# paru_install.sh
 
 # Function to install paru
 install_paru() {
@@ -8,7 +8,7 @@ install_paru() {
         # Install paru
         git clone https://aur.archlinux.org/paru-bin.git
         cd paru-bin || exit 1
-        makepkg -si --noconfirm --quiet
+        makepkg -si --noconfirm
         cd ..
         rm -rf paru-bin
     else

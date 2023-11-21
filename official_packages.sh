@@ -16,10 +16,6 @@ fi
 success_packages=()
 failure_packages=()
 
-# Install paru
-source install_paru.sh
-install_paru
-
 # Function to install a package
 install_package() {
     echo -e "\n${PURPLE}Installing $1...${NC}\n"
@@ -33,7 +29,7 @@ install_package() {
     fi
 }
 
-pacman -Syu
+pacman -Syu --noconfirm --needed --quiet
 
 # Specify the line to uncomment
 line_color="Color"
@@ -41,7 +37,7 @@ line_color="Color"
 sed -i '/^#Color/a ILoveCandy' /etc/pacman.conf
 sed -i "s/^#${line_color}/${line_color}/" /etc/pacman.conf # See color text in terminal
 
-pacman -Syy # -Syy means forceful refresh of pacman database sync
+pacman -Syy --noconfirm --needed --quiet  # -Syy means forceful refresh of pacman database sync
 
 install_package pacman-contrib
 systemctl enable paccache.timer
@@ -93,6 +89,7 @@ install_package clang
 install_package	bitwarden # Bitwarden Password Manager
 install_package neofetch
 install_package vi
+install_package dbeaver # Database GUI Client
 
 # # Install Calibre
 echo -e "\n${PURPLE}Installing Calibre${NC}\n"

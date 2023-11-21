@@ -11,7 +11,7 @@ success_packages=()
 failure_packages=()
 
 # Install paru
-source install_paru.sh
+source paru_install.sh
 install_paru
 
 # Check if flatpak is installed

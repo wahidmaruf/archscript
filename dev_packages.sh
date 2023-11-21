@@ -10,7 +10,7 @@ success_packages=()
 failure_packages=()
 
 # Install paru
-source install_paru.sh
+source paru_install.sh
 install_paru
 
 # Function to install packages from external sources
@@ -37,7 +37,6 @@ install_aur_package android-platform
 
 install_aur_package pycharm-community-jre
 install_aur_package vscodium-bin
-install_aur_package dbeaver-git
 
 # Others
 install_aur_package zoom
