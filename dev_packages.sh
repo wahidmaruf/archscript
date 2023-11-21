@@ -49,6 +49,8 @@ install_aur_package pycharm-community-jre
 install_aur_package vscodium-bin
 install_aur_package dbeaver-git
 
+# Others
+install_aur_package zoom
 
 # Install Flutter
 cd ~

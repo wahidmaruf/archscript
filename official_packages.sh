@@ -29,6 +29,33 @@ install_package() {
     fi
 }
 
+pacman -Syu
+
+# Specify the line to uncomment
+line_color="Color"
+# Uncomment the specified line in /etc/pacman.conf
+sed -i "s/^#${line_color}/${line_color}/" /etc/pacman.conf # See color text in terminal
+
+echo 'ILoveCandy' | sudo tee -a /etc/pacman.conf
+pacman -Syy # -Syy means forceful refresh of pacman database sync
+
+install_package pacman-contrib
+systemctl enable paccache.timer
+
+
+# Install addtional linux kernels as a safty precaution
+install_package linux-lts
+install_package linux-lts-headers
+install_package linux-hardened
+install_package linux-hardened-headers
+install_package linux-zen
+install_package linux-zen-headers
+
+# Install and enable ufw (Uncomplicated Firewall)
+install_package ufw
+systemctl enable ufw
+systemctl start ufw
+
 # Install IDE
 install_package npm
 
@@ -36,9 +63,13 @@ install_package npm
 install_package docker
 install_package virtualbox
 install_package firefox
+
 # Install Media Players
 install_package vlc
+
+# Install Graphics software
 install_package gimp
+install_package inkscape
 
 # Install and Editor
 install_package okular
