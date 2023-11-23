@@ -94,6 +94,7 @@ install_package neofetch
 install_package vi
 install_package dbeaver # Database GUI Client
 install_package	discord
+install_package	openrazer-daemon # Open Razer background service
 
 # # Install Calibre
 echo -e "\n${PURPLE}Installing Calibre${NC}\n"

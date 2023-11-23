@@ -19,6 +19,8 @@ sudo bash official_packages.sh
 bash aur_packages.sh
 bash dev_packages.sh
 
+sudo gpasswd -a $USER plugdev # Part of Razer peripherals installation
+
 # Accept Android Licenses
 echo -e "\n${GREEN}Change /opt/android-sdk folder permission${NC}"
 sudo chmod 777 /opt/android-sdk

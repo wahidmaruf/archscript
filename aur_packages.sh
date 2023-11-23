@@ -71,10 +71,12 @@ install_aur_package librewolf-bin
 
 # Keyboard
 install_aur_package keyman 
+install_aur_package razergenie # Razer Peripherals UI
 
 install_flatpak_package com.github.Murmele.Gittyup # Git Client
 install_flatpak_package com.github.johnfactotum.Foliate # EBook Reader
 install_flatpak_package com.github.micahflee.torbrowser-launcher
+
 
 # Display results
 echo -e "\n${GREEN}Packages successfully installed:${NC}"
