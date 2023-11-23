@@ -62,10 +62,13 @@ install_package npm
 # Install Virtualization
 install_package docker
 install_package virtualbox
+
 install_package firefox
 
 # Install Media Players
 install_package vlc
+install_package smplayer-git
+install_package smplayer-skins-git
 
 # Install Graphics software
 install_package gimp
@@ -90,6 +93,7 @@ install_package	bitwarden # Bitwarden Password Manager
 install_package neofetch
 install_package vi
 install_package dbeaver # Database GUI Client
+install_package	discord
 
 # # Install Calibre
 echo -e "\n${PURPLE}Installing Calibre${NC}\n"
@@ -100,6 +104,7 @@ echo -e "\n${PURPLE}Activating multilib Repo${NC}\n"
 awk '$0=="#[multilib]"{c=2} c&&c--{sub(/#/,"")} 1' /etc/pacman.conf > /tmp/pacman.conf.tmp && mv /tmp/pacman.conf.tmp /etc/pacman.conf
 
 pacman -Sy # Update the repository database
+
 install_package steam
 
 install_package foliate # Document Viewer
