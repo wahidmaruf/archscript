@@ -88,13 +88,20 @@ install_package ninja
 install_package cmake
 install_package clang
 
+# Graphics Drivers
+install_package nvidia-open # Required for Turing Nvidia GPU, Current GPU Nvidia 2060
+install_package nvidia-utils # Package contains a file which blacklists the nouveau module, so rebooting is necessary
+install_package nvidia-settings # Configure many options using either CLI or GUI
+
 # Others
 install_package	bitwarden # Bitwarden Password Manager
 install_package neofetch
 install_package vi
 install_package dbeaver # Database GUI Client
 install_package	discord
-install_package	openrazer-daemon # Open Razer background service
+install_package	openrazer-daemon # Open Razer background service for razer peripherals e.g. keyboard, mouse
+install_package inxi # Full featured CLI system information tool
+install_package lm_sensors # Required to control cpu fans
 
 # # Install Calibre
 echo -e "\n${PURPLE}Installing Calibre${NC}\n"

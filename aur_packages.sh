@@ -69,6 +69,9 @@ install_aur_package timeshift-autosnap # Backup System
 install_aur_package google-chrome 
 install_aur_package librewolf-bin 
 
+# Asus Fan Control
+install_aur_package asusctl # lm_sensors also required
+
 # Keyboard
 install_aur_package keyman 
 install_aur_package razergenie # Razer Peripherals UI
