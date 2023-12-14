@@ -13,3 +13,11 @@ pacman -S os-prober --noconfirm --needed --quiet
 pacman -S amd-ucode --noconfirm --needed --quiet
 
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# Post Task
+# GRUB_DEFAULT=saved
+# GRUB_SAVEDEFAULT=true
+
+# GRUB_DISABLE_SUBMENU=y
+
+# sudo chown $USER: /run/media/$USER/adata
