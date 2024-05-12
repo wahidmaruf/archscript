@@ -133,3 +133,12 @@ else
         echo -e "${RED}- $package${NC}"
     done
 fi
+
+
+# install anaconda
+# pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl alsa-lib libglvnd
+# curl -O https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+# bash Anaconda3-2024.02-1-Linux-x86_64.sh 
+
+# shell profile to automatically initialize conda
+# conda init --reverse $SHELL auto 
