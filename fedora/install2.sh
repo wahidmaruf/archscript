@@ -70,6 +70,8 @@ dnf update -y && dnf install -y dnf-plugins-core
 echo -e "\n${GREEN}Enabling RPM Fusion repositories...${NC}"
 dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-\$(rpm -E %fedora).noarch.rpm
 dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-\$(rpm -E %fedora).noarch.rpm
+sudo dnf install fedora-workstation-repositories
+$ sudo dnf config-manager --set-enabled google-chrome
 
 # Check if flatpak is installed
 if ! command -v flatpak &> /dev/null; then
