@@ -96,7 +96,9 @@ fi
 echo -e "\n${GREEN}Adding Flathub repository for flatpak...${NC}"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+EOF
 
+echo -e "\n${GREEN}Installing android studio...${NC}\n"
 wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.1.19/android-studio-2023.3.1.19-linux.tar.gz
 tar -xzvf android-studio-2023.3.1.19-linux.tar.gz
 sudo mv android-studio /opt/
@@ -111,8 +113,6 @@ Icon=/opt/android-studio/bin/studio.png
 Comment=Android IDE
 Categories=Development;IDE;
 Terminal=false
-EOF
-
 EOF
 
 for package in "${rpm_packages[@]}"; do
