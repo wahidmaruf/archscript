@@ -29,9 +29,6 @@ rpm_packages=(
     "okular"
     "qbittorrent"
     "libreoffice"
-    "ninja-build"
-    "cmake"
-    "clang"
     "vim-enhanced"
     "dbeaver"
     "discord"
@@ -40,6 +37,11 @@ rpm_packages=(
     "lm_sensors"
     "steam"
     "foliate"
+    "calibre"
+    "cmake"
+    "clang"
+    "ninja-build"
+    "pkg-config"
 )
 
 flatpak_packages=(
@@ -94,6 +96,23 @@ fi
 echo -e "\n${GREEN}Adding Flathub repository for flatpak...${NC}"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.3.1.19/android-studio-2023.3.1.19-linux.tar.gz
+tar -xzvf android-studio-2023.3.1.19-linux.tar.gz
+sudo mv android-studio /opt/
+rm android-studio-2023.3.1.19-linux.tar.gz
+sudo tee /usr/share/applications/android-studio.desktop > /dev/null <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Exec=/opt/android-studio/bin/studio.sh
+Icon=/opt/android-studio/bin/studio.png
+Comment=Android IDE
+Categories=Development;IDE;
+Terminal=false
+EOF
+
 EOF
 
 for package in "${rpm_packages[@]}"; do
@@ -118,8 +137,3 @@ else
     done
 fi
 
-dnf list installed > installed_apps.txt
-echo "The list of installed packages has been saved to installed_apps.txt"
-
-echo -e "\n${PURPLE}Installing Calibre${NC}\n"
-wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
