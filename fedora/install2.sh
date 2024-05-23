@@ -71,11 +71,8 @@ echo -e "\n${GREEN}Enabling RPM Fusion repositories...${NC}"
 dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-\$(rpm -E %fedora).noarch.rpm
 dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-\$(rpm -E %fedora).noarch.rpm
 
-echo -e "\n${GREEN}Installing Google Chrome${NC}"
-sudo dnf install wget -y
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-sudo dnf localinstall google-chrome-stable_current_x86_64.rpm -y
-rm google-chrome-stable_current_x86_64.rpm
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
 
 # Check if flatpak is installed
 if ! command -v flatpak &> /dev/null; then
