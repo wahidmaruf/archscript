@@ -1,0 +1,51 @@
+
+  sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+   85  sudo yum install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+   86  flutter doctor
+   87  sudo yum install clang
+   88  flutter doctor
+   89  sudo yum install clang cmake ninja-build libgtk-3-dev
+   90  sudo yum install cmake
+   91  flutter doctor
+   92  sudo yum install ninja-build
+   93  flutter doctor
+   94  sudo yum install libgtk-3-dev
+   95  sudo yum install libgtk-3
+   96  sudo dnf install gtk3-devel
+   97  flutter doctor
+   98  history
+
+https://developer.android.com/studio
+
+tar -xzvf android-studio-ide-*-linux.tar.gz
+sudo mv android-studio /opt/
+/opt/android-studio/bin/studio.sh
+sudo nano /usr/share/applications/android-studio.desktop
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Exec=/opt/android-studio/bin/studio.sh
+Icon=/opt/android-studio/bin/studio.png
+Comment=Android IDE
+Categories=Development;IDE;
+Terminal=false
+
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+source ~/.bashrc  # or source ~/.zshrc
+
+
+unzip the command line tools in (ANDROID_HOME=$HOME/Android/Sdk)
+
+unzip commandlinetools-linux-*.zip -d cmdline-tools
+sudo mkdir -p /opt/android-sdk/cmdline-tools/latest
+sudo mv cmdline-tools/* /opt/android-sdk/cmdline-tools/latest
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
