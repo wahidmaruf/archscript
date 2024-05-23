@@ -13,21 +13,17 @@ failure_packages=()
 # Arrays of packages to install
 rpm_packages=(
     "mpv" # Media Player
-    "protonup-qt" # Game package
-    "lutris" # Game package
     "mangohud" # Game package
     "timeshift" # Utility
     "google-chrome-stable" # Browser
+    "brave-browser"
     "asusctl" # Asus Fan Control
-    "keyman" # Keyboard
 )
 
 flatpak_packages=(
     "com.getpostman.Postman" # Postman
     "notion-app" # Document Viewer and Editor (replace if not available)
     "com.heroicgameslauncher.hgl" # Game package
-    "com.surfshark.SurfsharkVPN" # Utility
-    "org.librewolf.Librewolf" # Browser
     "com.github.Murmele.Gittyup" # Git Client
     "com.github.johnfactotum.Foliate" # EBook Reader
     "com.github.micahflee.torbrowser-launcher" # Tor Browser
@@ -73,6 +69,9 @@ dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-
 
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
+
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # Check if flatpak is installed
 if ! command -v flatpak &> /dev/null; then
